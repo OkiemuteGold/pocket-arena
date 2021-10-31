@@ -76,6 +76,10 @@ nav a:hover {
   color: #db483b !important;
 }
 
+.navbar-light .navbar-brand {
+  z-index: 999;
+}
+
 .logo {
   width: 12rem;
 }
