@@ -506,7 +506,7 @@ footer nav a,
 }
 
 #signUpModalToggle .modal-dialog {
-  max-width: 50rem;
+  max-width: 45rem;
 }
 
 .modal-content {
@@ -551,6 +551,17 @@ form button {
 
 select option {
   color: rgba(255, 255, 255, 0.2);
+}
+
+label {
+  font-size: 0.875rem;
+  line-height: 1.3rem;
+  font-weight: 500;
+}
+
+input[type="checkbox"]:checked {
+  background: #db483b;
+  color: #db483b;
 }
 
 .helper p {

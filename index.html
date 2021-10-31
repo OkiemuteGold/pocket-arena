@@ -62,9 +62,9 @@
     </nav>
 
     <!-- login, forgot password and sign up modal -->
-    <!-- data-bs-backdrop="static" data-bs-keyboard="false" -->
+    <!-- data-bs-backdrop="static" data-bs-keyboard="false" in .modal -->
     <!-- login -->
-    <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false"  id="loginModalToggle" aria-hidden="true" aria-labelledby="loginModalToggleLabel"
+    <div class="modal fade" id="loginModalToggle" aria-hidden="true" aria-labelledby="loginModalToggleLabel"
         tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -246,17 +246,14 @@
                             </div>
                         </div>
 
-                        <div class="d-flex flex-column flex-md-row align-items-md-center mb-4">
-                            <div class="form_input me-md-3">
-                                <input type="checkbox" name="confirm check" id="confirm_check">
-                                <label for="confirm_check">
-                                    I confirm i am not a resident or citizen of the United states of America
-                                </label>
-
-                                <div class="helper">
-                                    <p class="d-none">You have to confirm that you are not a US resident/citizen</p>
-                                </div>
-                            </div>
+                        <div class="d-flex align-items-center mb-4 ps-1 pb-3">
+                            <input type="checkbox" name="confirm check" id="confirm_check">
+                            <label class="ms-2 flex-fill" for="confirm_check">
+                                I confirm i am not a resident or citizen of the United states of America
+                            </label>
+                        </div>
+                        <div class="helper">
+                            <p class="d-none">You have to confirm that you are not a US resident/citizen</p>
                         </div>
                     
                         <div class="d-flex justify-content-center">
