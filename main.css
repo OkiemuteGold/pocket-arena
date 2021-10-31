@@ -31,7 +31,7 @@ img {
   /* display: flex; */
   border-left: 1px solid #ccc;
   margin-left: 10px;
-  z-index: 9999;
+  z-index: 999;
 }
 
 .button {
@@ -43,12 +43,16 @@ img {
   border: 1px solid #db483b;
   border-radius: 0.5rem;
   color: #fff;
-  z-index: 9999;
+  z-index: 999;
 }
 
 .button:hover {
   background: rgba(255, 255, 255, 0.25);
   border: 1px solid #db483b;
+}
+
+.button:focus {
+  box-shadow: none;
 }
 
 .nav_action_buttons button:first-child {
@@ -78,7 +82,7 @@ nav a:hover {
 
 .navbar-light .navbar-toggler {
   border: 1px solid #db483b;
-  z-index: 9999;
+  z-index: 999;
 }
 
 .inner_wrapper {
@@ -86,7 +90,6 @@ nav a:hover {
   top: 0px;
   left: 0px;
   width: 100%;
-  /* height: 100%; */
   overflow: hidden;
   z-index: -1;
   background-image: radial-gradient(
@@ -96,13 +99,6 @@ nav a:hover {
     rgb(32, 25, 50) 100%
   );
 }
-
-/* .inner_wrapper .bg {
-  z-index: 1;
-  background: url(imgs/ignition-bg-sprite.webp) no-repeat;
-  background-size: cover;
-  position: absolute;
-} */
 
 .inner_wrapper .bg.satellite,
 .inner_wrapper .bg.big_moon,
@@ -143,8 +139,8 @@ nav a:hover {
 .inner_wrapper .bg.small_moon {
   top: 120rem;
   left: 5%;
-  background-position: -400px -128.5px;
-  width: 286.5px;
+  background-position: -400px -129px;
+  width: 287px;
   height: 286px;
 }
 
@@ -413,7 +409,9 @@ nav a:hover {
   color: #fff;
 }
 
-#third_section .box_container input {
+#third_section .box_container input,
+.form_input input,
+#country_select {
   border: 1px solid rgba(255, 255, 255, 0.2);
   width: 100%;
   color: #fff;
@@ -429,7 +427,8 @@ nav a:hover {
   outline-offset: 2px;
 }
 
-#third_section .box_container button {
+#third_section .box_container button,
+form button {
   white-space: nowrap;
   font-weight: 500;
   border-radius: 0.5rem;
@@ -466,7 +465,7 @@ footer nav a {
 footer nav a,
 .footer_copyright p {
   color: #fff;
-  opacity: 0.6;
+  opacity: 0.55;
   font-size: 0.875rem;
   line-height: 1.3rem;
   font-weight: 500;
@@ -483,6 +482,114 @@ footer nav a,
 
 .social_item span a svg {
   width: 1.25rem;
+}
+
+/* login, sign up and forgot password modals --------------- */
+/* body background blur */
+.modal {
+  position: fixed;
+  inset: 0px;
+  z-index: 9999;
+  overflow-y: scroll;
+  padding: 4rem 1rem;
+  box-shadow: 0 0 rgba(0, 0, 0, 0.25), 0 0 rgba(0, 0, 0, 0.25),
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+/* modal body */
+.modal-dialog {
+  z-index: 99999;
+  max-width: 35rem;
+  margin: 0px auto;
+}
+
+#signUpModalToggle .modal-dialog {
+  max-width: 50rem;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  padding: 3.5rem 2.75rem 2.5rem;
+  color: #fff;
+  background-color: #201831;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.625rem;
+  z-index: 99999;
+}
+
+.modal-header {
+  justify-content: center;
+  border: none;
+  margin-bottom: 0.5rem;
+}
+
+.modal-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.56rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.form_input {
+  margin-bottom: 1rem;
+}
+
+form button {
+  padding: 0.5rem 1rem;
+}
+
+#country_select {
+  width: 100%;
+  color: rgba(255, 255, 255, 0.2);
+  background: transparent;
+}
+
+select option {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.helper p {
+  color: #dc3545;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.125rem;
+  margin-bottom: 0;
+  margin-top: 0.25rem;
+}
+
+.modal-header .close-btn {
+  position: absolute;
+  top: 1.05rem;
+  right: 1.25rem;
+  font-size: 1.35rem;
+}
+
+.modal-body p {
+  font-size: 0.9375rem;
+  line-height: 1.4125rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 1.75rem;
+}
+
+.modal-footer {
+  justify-content: space-between;
+  border: none;
+}
+
+.modal-footer p {
+  font-size: 0.875rem;
+  line-height: 1.3rem;
+  font-weight: 500;
+  color: #fff;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  cursor: pointer;
 }
 
 @media (min-width: 480px) and (max-width: 1023px) {
@@ -690,6 +797,15 @@ footer nav a,
   @media (max-width: 426px) {
     .nav-link {
       width: 80%;
+    }
+
+    .modal-footer {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .modal-content {
+      padding: 3.5rem 0.5rem 2.5rem;
     }
   }
 }
